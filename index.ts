@@ -6,6 +6,11 @@ dotenv.config();
 const app: Express = express();
 const port = process.env.PORT;
 
+const cors = require('cors');
+app.use(cors({
+    origin: '*'
+}));
+
 app.get('/', (req: Request, res: Response) => {
     res.send('Express + TypeScript Server');
 });
